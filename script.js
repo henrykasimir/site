@@ -40,7 +40,14 @@
   }
 
   var headings = Array.prototype.slice.call(content.querySelectorAll('h2, h3'));
-  if (!headings.length) return;
+  if (!headings.length) {
+    // No sections, so there is nothing to navigate. Remove the rail entirely.
+    var empty = document.querySelector('.toc-container');
+    var emptyBtn = document.querySelector('.toc-toggle');
+    if (empty) empty.remove();
+    if (emptyBtn) emptyBtn.remove();
+    return;
+  }
 
   headings.forEach(function (h) {
     if (!h.id) h.id = slug(h.textContent);
