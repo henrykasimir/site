@@ -3,10 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Henry Kasimir</title>
+<title>Post title — Henry Kasimir</title>
 <meta name="description" content="">
 <script>
-  // Runs before paint so the page never flashes the wrong theme.
   (function () {
     var t = null;
     try { t = localStorage.getItem('theme'); } catch (e) {}
@@ -47,33 +46,51 @@
   </div>
 </header>
 
-<div class="page page--single">
+<div class="page">
+
+  <aside class="contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#section-one">Section one</a></li>
+      <li><a href="#section-two">Section two</a></li>
+      <li><a href="#section-three">Section three</a></li>
+    </ol>
+  </aside>
+
   <article>
+    <h1>Post title</h1>
+    <p class="dateline">Month Year</p>
 
-    <!-- Short bio. The rest stays hidden until someone clicks More. -->
-    <p class="bio">
-      One or two sentences about who you are and what you do.
-      <button type="button" class="more-toggle">More</button>
-    </p>
-    <div class="bio-more" hidden>
-      <p>Second paragraph. Background, previous roles, anything that does not belong in the opening line.</p>
-      <p>Third paragraph. Education, credentials, whatever you want at the bottom.</p>
+    <p>Opening paragraph.</p>
+    <p>Second paragraph, with an <a href="#">inline link</a> and some <strong>bold text</strong>.</p>
+
+    <h2 id="section-one">Section one</h2>
+    <p>Body text.</p>
+
+    <h2 id="section-two">Section two</h2>
+    <p>Body text with a footnote marker.<sup><a href="#fn1" id="fnref1">1</a></sup></p>
+    <ul>
+      <li><strong>List item.</strong> Supporting text.</li>
+      <li><strong>List item.</strong> Supporting text.</li>
+    </ul>
+
+    <h2 id="section-three">Section three</h2>
+    <p>Body text.</p>
+    <blockquote>Pull quote or block quotation.</blockquote>
+
+    <div class="footnotes">
+      <h2>Footnotes</h2>
+      <ol>
+        <li id="fn1">Footnote text. <a href="#fnref1">Back</a></li>
+      </ol>
     </div>
-
-    <h2>Essays</h2>
-    <ul class="link-list">
-      <li><a href="/essay.html">Essay title</a></li>
-      <li><a href="#">Essay title</a></li>
-    </ul>
-
-    <h2>Short posts</h2>
-    <ul class="link-list">
-      <li><a href="#">Post title</a></li>
-      <li><a href="#">Post title</a></li>
-      <li><a href="#">Post title</a></li>
-    </ul>
-
   </article>
+
+  <div class="foot">
+    <a href="#top">Back to top</a>
+    <a href="mailto:you@example.com">Contact</a>
+  </div>
+
 </div>
 
 <script src="script.js"></script>

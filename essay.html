@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Essay title — Henry Kasimir</title>
+<meta name="description" content="Subtitle goes here.">
+<script>
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem('theme'); } catch (e) {}
+    if (!t) {
+      t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="sitename" href="/">Henry Kasimir</a>
+    <span class="running-title" aria-hidden="true">Essay title</span>
+    <nav class="masthead-nav">
+      <a href="/archive.html">Archive</a>
+      <button type="button" class="theme-toggle" aria-label="Switch between light and dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2"/>
+          <g class="rays">
+            <line x1="12" y1="1.8" x2="12" y2="4.4"/>
+            <line x1="12" y1="19.6" x2="12" y2="22.2"/>
+            <line x1="1.8" y1="12" x2="4.4" y2="12"/>
+            <line x1="19.6" y1="12" x2="22.2" y2="12"/>
+            <line x1="4.8" y1="4.8" x2="6.6" y2="6.6"/>
+            <line x1="17.4" y1="17.4" x2="19.2" y2="19.2"/>
+            <line x1="4.8" y1="19.2" x2="6.6" y2="17.4"/>
+            <line x1="17.4" y1="6.6" x2="19.2" y2="4.8"/>
+          </g>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.5 14.8A8.6 8.6 0 0 1 9.2 3.5a8.6 8.6 0 1 0 11.3 11.3z"/>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- The anchor in each href must match the id on the matching h2 below. -->
+  <aside class="contents">
+    <h2>Contents</h2>
+    <ol class="contents-numbered">
+      <li><a href="#1-first-section">First section</a></li>
+      <li><a href="#2-second-section">Second section</a></li>
+      <li><a href="#3-third-section">Third section</a></li>
+      <li><a href="#closing">Closing</a></li>
+    </ol>
+  </aside>
+
+  <article>
+    <h1>Essay title</h1>
+    <p class="deck">Subtitle. One line saying what the essay argues.</p>
+    <p class="dateline">Month Year</p>
+
+    <p>Opening paragraph. Essays on that site open with a scene or an anecdote rather than a thesis, then arrive at the argument by the third or fourth paragraph.</p>
+
+    <p>Second paragraph, with an <a href="#">inline link</a>, some <strong>bold text</strong> and a footnote marker.<sup><a href="#fn1" id="fnref1">1</a></sup></p>
+
+    <p>Third paragraph. A numbered list works well for laying out the structure of what follows:</p>
+
+    <ol>
+      <li><strong>First point.</strong> Supporting text.</li>
+      <li><strong>Second point.</strong> Supporting text.</li>
+      <li><strong>Third point.</strong> Supporting text.</li>
+    </ol>
+
+    <h2 id="1-first-section">1. First section</h2>
+    <h3>First section theme</h3>
+
+    <p>Body text.</p>
+
+    <blockquote>
+      <p>Block quotation. Used for quoting another writer at length.</p>
+    </blockquote>
+
+    <p>Body text after the quotation.</p>
+
+    <h3>Defences</h3>
+
+    <p>The essays pair each problem section with a short section on what to do about it. Keep the same subheading word across sections so the structure repeats.</p>
+
+    <h2 id="2-second-section">2. Second section</h2>
+    <h3>Second section theme</h3>
+
+    <p>Body text.</p>
+
+    <ul>
+      <li><strong>List item.</strong> Supporting text.</li>
+      <li><strong>List item.</strong> Supporting text.</li>
+    </ul>
+
+    <h3>Defences</h3>
+    <p>Body text.</p>
+
+    <h2 id="3-third-section">3. Third section</h2>
+    <h3>Third section theme</h3>
+
+    <p>Body text.</p>
+
+    <h2 id="closing">Closing</h2>
+
+    <p>Closing paragraph. The final line of each of those essays is a short declarative sentence in bold.</p>
+
+    <p><strong>A short closing line.</strong></p>
+
+    <div class="footnotes">
+      <h2>Footnotes</h2>
+      <ol>
+        <li id="fn1">Footnote text. <a href="#fnref1">Back</a></li>
+      </ol>
+    </div>
+  </article>
+
+  <div class="foot">
+    <a href="#top">Back to top</a>
+    <a href="mailto:you@example.com">Contact</a>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

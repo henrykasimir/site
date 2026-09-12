@@ -4,6 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Archive — Henry Kasimir</title>
+<script>
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem('theme'); } catch (e) {}
+    if (!t) {
+      t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body id="top">
@@ -11,7 +21,27 @@
 <header class="masthead">
   <div class="masthead-inner">
     <a class="sitename" href="/">Henry Kasimir</a>
-    <nav><a href="/archive.html">Archive</a></nav>
+    <nav class="masthead-nav">
+      <a href="/archive.html">Archive</a>
+      <button type="button" class="theme-toggle" aria-label="Switch between light and dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2"/>
+          <g class="rays">
+            <line x1="12" y1="1.8" x2="12" y2="4.4"/>
+            <line x1="12" y1="19.6" x2="12" y2="22.2"/>
+            <line x1="1.8" y1="12" x2="4.4" y2="12"/>
+            <line x1="19.6" y1="12" x2="22.2" y2="12"/>
+            <line x1="4.8" y1="4.8" x2="6.6" y2="6.6"/>
+            <line x1="17.4" y1="17.4" x2="19.2" y2="19.2"/>
+            <line x1="4.8" y1="19.2" x2="6.6" y2="17.4"/>
+            <line x1="17.4" y1="6.6" x2="19.2" y2="4.8"/>
+          </g>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.5 14.8A8.6 8.6 0 0 1 9.2 3.5a8.6 8.6 0 1 0 11.3 11.3z"/>
+        </svg>
+      </button>
+    </nav>
   </div>
 </header>
 
@@ -21,7 +51,7 @@
 
     <ul class="archive-list">
       <li>
-        <a href="/index.html">Post title</a>
+        <a href="/post.html">Post title</a>
         <span class="archive-date">Month Year</span>
       </li>
       <li>
@@ -41,5 +71,6 @@
   </div>
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>
