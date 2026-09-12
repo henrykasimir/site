@@ -15,84 +15,75 @@
     document.documentElement.setAttribute('data-theme', t);
   })();
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body id="top">
+<body>
+<div id="top" class="page-wrapper">
 
-<header class="masthead">
-  <div class="masthead-inner">
-    <a class="sitename" href="/">Henry Kasimir</a>
-    <nav class="masthead-nav">
-      <a href="/archive.html">Archive</a>
-      <button type="button" class="theme-toggle" aria-label="Switch between light and dark mode">
-        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="4.2"/>
-          <g class="rays">
-            <line x1="12" y1="1.8" x2="12" y2="4.4"/>
-            <line x1="12" y1="19.6" x2="12" y2="22.2"/>
-            <line x1="1.8" y1="12" x2="4.4" y2="12"/>
-            <line x1="19.6" y1="12" x2="22.2" y2="12"/>
-            <line x1="4.8" y1="4.8" x2="6.6" y2="6.6"/>
-            <line x1="17.4" y1="17.4" x2="19.2" y2="19.2"/>
-            <line x1="4.8" y1="19.2" x2="6.6" y2="17.4"/>
-            <line x1="17.4" y1="6.6" x2="19.2" y2="4.8"/>
-          </g>
-        </svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20.5 14.8A8.6 8.6 0 0 1 9.2 3.5a8.6 8.6 0 1 0 11.3 11.3z"/>
-        </svg>
+  <header class="header">
+    <div class="container cc-header cc-narrow">
+      <a href="/" class="header-name-link"><h1 class="header-name">Henry Kasimir</h1></a>
+      <button type="button" class="toc-toggle" aria-label="Contents">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="toc-toggle_icon cc-close"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="toc-toggle_icon cc-hamburger"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       </button>
-    </nav>
-  </div>
-</header>
-
-<div class="page">
-
-  <aside class="contents">
-    <h2>Contents</h2>
-    <ol>
-      <li><a href="#section-one">Section one</a></li>
-      <li><a href="#section-two">Section two</a></li>
-      <li><a href="#section-three">Section three</a></li>
-    </ol>
-  </aside>
-
-  <article>
-    <h1>Post title</h1>
-    <p class="dateline">Month Year</p>
-
-    <p>Opening paragraph.</p>
-    <p>Second paragraph, with an <a href="#">inline link</a> and some <strong>bold text</strong>.</p>
-
-    <h2 id="section-one">Section one</h2>
-    <p>Body text.</p>
-
-    <h2 id="section-two">Section two</h2>
-    <p>Body text with a footnote marker.<sup><a href="#fn1" id="fnref1">1</a></sup></p>
-    <ul>
-      <li><strong>List item.</strong> Supporting text.</li>
-      <li><strong>List item.</strong> Supporting text.</li>
-    </ul>
-
-    <h2 id="section-three">Section three</h2>
-    <p>Body text.</p>
-    <blockquote>Pull quote or block quotation.</blockquote>
-
-    <div class="footnotes">
-      <h2>Footnotes</h2>
-      <ol>
-        <li id="fn1">Footnote text. <a href="#fnref1">Back</a></li>
-      </ol>
+      <div class="toggle-switch">
+        <input type="checkbox" id="color-mode" name="Color Mode" class="toggle-checkbox">
+        <label for="color-mode" class="toggle-label"><span class="u-sr-only">Dark mode</span></label>
+      </div>
     </div>
-  </article>
+  </header>
 
-  <div class="foot">
-    <a href="#top">Back to top</a>
-    <a href="mailto:you@example.com">Contact</a>
-  </div>
+  <nav class="toc-container">
+    <div class="container cc-narrow cc-toc">
+      <h2 class="h3">Contents</h2>
+      <ul class="toc-list" data-toc-list></ul>
+    </div>
+  </nav>
+
+  <main class="page-main">
+    <article>
+      <div class="container cc-narrow">
+        <section data-footnotes="body">
+          <h1 class="post-title">Post title</h1>
+          <div class="post-date">Month Year</div>
+
+          <div class="rich-text" data-toc-contents>
+            <p>Opening paragraph.</p>
+            <p>Second paragraph, with an <a href="#">inline link</a> and some <strong>bold text</strong>.</p>
+
+            <h2>Section one</h2>
+            <p>Body text.</p>
+
+            <h2>Section two</h2>
+            <p>Body text with a footnote marker.<sup>1</sup></p>
+            <ul>
+              <li><strong>List item.</strong> Supporting text.</li>
+              <li><strong>List item.</strong> Supporting text.</li>
+            </ul>
+
+            <h2>Section three</h2>
+            <p>Body text.</p>
+            <blockquote><p>Block quotation.</p></blockquote>
+          </div>
+
+          <div class="u-mb-lg">
+            <h2 class="h3 u-mb-sm">Footnotes</h2>
+            <div class="rich-text footnotes" data-footnotes="list">
+              <ol>
+                <li>Footnote text.</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
 
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>

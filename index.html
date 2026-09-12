@@ -6,7 +6,6 @@
 <title>Henry Kasimir</title>
 <meta name="description" content="">
 <script>
-  // Runs before paint so the page never flashes the wrong theme.
   (function () {
     var t = null;
     try { t = localStorage.getItem('theme'); } catch (e) {}
@@ -16,66 +15,61 @@
     document.documentElement.setAttribute('data-theme', t);
   })();
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body id="top">
+<body>
+<div id="top" class="page-wrapper">
 
-<header class="masthead">
-  <div class="masthead-inner">
-    <a class="sitename" href="/">Henry Kasimir</a>
-    <nav class="masthead-nav">
-      <a href="/archive.html">Archive</a>
-      <button type="button" class="theme-toggle" aria-label="Switch between light and dark mode">
-        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="4.2"/>
-          <g class="rays">
-            <line x1="12" y1="1.8" x2="12" y2="4.4"/>
-            <line x1="12" y1="19.6" x2="12" y2="22.2"/>
-            <line x1="1.8" y1="12" x2="4.4" y2="12"/>
-            <line x1="19.6" y1="12" x2="22.2" y2="12"/>
-            <line x1="4.8" y1="4.8" x2="6.6" y2="6.6"/>
-            <line x1="17.4" y1="17.4" x2="19.2" y2="19.2"/>
-            <line x1="4.8" y1="19.2" x2="6.6" y2="17.4"/>
-            <line x1="17.4" y1="6.6" x2="19.2" y2="4.8"/>
-          </g>
-        </svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20.5 14.8A8.6 8.6 0 0 1 9.2 3.5a8.6 8.6 0 1 0 11.3 11.3z"/>
-        </svg>
-      </button>
-    </nav>
-  </div>
-</header>
-
-<div class="page page--single">
-  <article>
-
-    <!-- Short bio. The rest stays hidden until someone clicks More. -->
-    <p class="bio">
-      One or two sentences about who you are and what you do.
-      <button type="button" class="more-toggle">More</button>
-    </p>
-    <div class="bio-more" hidden>
-      <p>Second paragraph. Background, previous roles, anything that does not belong in the opening line.</p>
-      <p>Third paragraph. Education, credentials, whatever you want at the bottom.</p>
+  <header class="header">
+    <div class="container cc-header cc-narrow">
+      <a href="/" class="header-name-link"><h1 class="header-name">Henry Kasimir</h1></a>
+      
+      <div class="toggle-switch">
+        <input type="checkbox" id="color-mode" name="Color Mode" class="toggle-checkbox">
+        <label for="color-mode" class="toggle-label"><span class="u-sr-only">Dark mode</span></label>
+      </div>
     </div>
+  </header>
 
-    <h2>Essays</h2>
-    <ul class="link-list">
-      <li><a href="/essay.html">Essay title</a></li>
-      <li><a href="#">Essay title</a></li>
-    </ul>
 
-    <h2>Short posts</h2>
-    <ul class="link-list">
-      <li><a href="#">Post title</a></li>
-      <li><a href="#">Post title</a></li>
-      <li><a href="#">Post title</a></li>
-    </ul>
 
-  </article>
+  <main class="page-main">
+    <article>
+      <div class="container cc-narrow">
+        <section>
+          <p>One or two sentences about who you are and what you do<span class="home-intro_expand-period">.</span><span class="home-intro_expand-ellipsis"> ... </span><button type="button" class="home-intro_expand-link">More</button></p>
+          <div class="home-intro_expand-content" hidden>
+            <div class="rich-text">
+              <p>Second paragraph. Background, previous roles, anything that does not belong in the opening line.</p>
+              <p>Third paragraph. Education, credentials, whatever you want at the bottom.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="u-mt-sm">
+          <h2 class="h3">Essays</h2>
+          <ul class="bullet-list_list">
+            <li class="bullet-list_item"><a href="/essay.html" class="bullet-list_link">Essay title</a></li>
+            <li class="bullet-list_item"><a href="#" class="bullet-list_link">Essay title</a></li>
+          </ul>
+        </section>
+
+        <section class="u-mt-sm u-mb-lg">
+          <h2 class="h3">Short posts</h2>
+          <ul class="bullet-list_list">
+            <li class="bullet-list_item"><a href="/post.html" class="bullet-list_link">Post title</a></li>
+            <li class="bullet-list_item"><a href="#" class="bullet-list_link">Post title</a></li>
+            <li class="bullet-list_item"><a href="#" class="bullet-list_link">Post title</a></li>
+          </ul>
+        </section>
+      </div>
+    </article>
+  </main>
+
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>
