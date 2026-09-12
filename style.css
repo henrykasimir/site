@@ -192,6 +192,27 @@ section{margin:0}
 .rich-text h1,.rich-text h2,.rich-text h3,.rich-text h4{margin-top:1em;text-wrap:balance}
 .rich-text ol,.rich-text ul{padding-left:2em}
 
+.rich-text figure{
+  min-width:100%;
+  margin:4rem 0;
+  border-radius:.5rem;
+  overflow:hidden;
+}
+.rich-text figure img{
+  display:block;width:100%;height:auto;
+  border-radius:.5rem;
+}
+.rich-text figure.cc-fullwidth{min-width:130%;position:relative;left:-15%}
+@media screen and (max-width:1350px){
+  .rich-text figure.cc-fullwidth{min-width:100%;left:0}
+}
+.rich-text figcaption{
+  margin-top:1em;
+  font-size:.9em;
+  color:var(--text-secondary);
+  text-align:center;
+}
+
 /* ---------- footnotes ---------- */
 .footnote-ref{
   z-index:1;background-color:var(--footnote-bg);
